@@ -1,0 +1,72 @@
+﻿@model EvaluationTracker.Models.Evaluation_Feedbacks
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Evaluation_Feedbacks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Screening_Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Screening_Level)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feedback)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Candidate_Details.Candidate_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Candidate_Details.Candidate_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interviewer_Details.Interviewer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interviewer_Details.Interviewer_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

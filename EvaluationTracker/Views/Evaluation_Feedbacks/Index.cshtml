@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EvaluationTracker.Models.Evaluation_Feedbacks>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Screening_Level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feedback)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Candidate_Details.Candidate_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interviewer_Details.Interviewer_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Screening_Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feedback)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Candidate_Details.Candidate_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Interviewer_Details.Interviewer_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Eval_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Eval_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Eval_Id })
+        </td>
+    </tr>
+}
+
+</table>
